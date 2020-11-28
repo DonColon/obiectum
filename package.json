@@ -1,0 +1,75 @@
+{
+    "name": "obiectum",
+    "version": "1.0.0",
+    "description": "A javascript module for object functions",
+    "keywords": [
+        "javascript",
+        "js",
+        "es6",
+        "object",
+        "clone",
+        "merge",
+        "equal"
+    ],
+    "author": {
+        "name": "Dardan Rrafshi",
+        "email": "dardan.rrafshi@gmail.com",
+        "url": "https://github.com/DonColon"
+    },
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/DonColon/obiectum#readme",
+    "bugs": {
+        "url": "https://github.com/DonColon/tempus/issues",
+        "email": "dardan.rrafshi@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DonColon/obiectum.git"
+    },
+    "files": [
+        "lib"
+    ],
+    "main": "lib/obiectum.cjs.js",
+    "module": "lib/obiectum.es.js",
+    "jsnext:module": "lib/obiectum.es.js",
+    "browser": "lib/obiectum.min.js",
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ],
+        "plugins": [
+            "@babel/plugin-transform-runtime"
+        ]
+    },
+    "scripts": {
+        "lint": "eslint src test",
+        "lint:fix": "eslint src test --fix",
+        "test": "mocha --require @babel/register",
+        "test:coverage": "nyc npm run test",
+        "docs": "documentation build src -f md -o docs/documentation.md --sort-order 'alpha'",
+        "clean": "del lib",
+        "prebuild": "npm run clean",
+        "build": "rollup -c"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.12.5"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.12.3",
+        "@babel/node": "^7.12.6",
+        "@babel/plugin-transform-runtime": "^7.12.1",
+        "@babel/preset-env": "^7.12.1",
+        "@babel/register": "^7.12.1",
+        "@rollup/plugin-babel": "^5.2.1",
+        "chai": "^4.2.0",
+        "del-cli": "^3.0.1",
+        "eslint": "^7.13.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
+        "rollup": "^2.33.2",
+        "rollup-plugin-terser": "^7.0.2"
+    }
+}
