@@ -1,13 +1,15 @@
 import { isJsonObject } from './types';
 
 export default function freeze(value) {
-    if(!isJsonObject(value) || Object.isFrozen(value)) {
+    if (!isJsonObject(value) || Object.isFrozen(value)) {
         return value;
     }
 
-    for(const key of Object.keys(value)) {
-        value[key] = freeze(value[key]);
+    const target = value;
+
+    for (const key of Object.keys(value)) {
+        target[key] = freeze(value[key]);
     }
 
-    return Object.freeze(value);
+    return Object.freeze(target);
 }

@@ -8,7 +8,7 @@ export function typeOf(value) {
 }
 
 export function isJsonObject(value) {
-    return typeOf(value) === 'Object';
+    return typeOf(value) === 'Object' || typeOf(value) === 'Array';
 }
 
 export function isRegularExpression(value) {
